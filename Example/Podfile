@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'mtpThemeManager_Example' do
+  pod 'mtpThemeManager', :path => '../'
+
+  target 'mtpThemeManager_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
