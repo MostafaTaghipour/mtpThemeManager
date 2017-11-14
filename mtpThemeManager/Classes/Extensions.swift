@@ -11,7 +11,7 @@ import UIKit
 
 extension Notification.Name
 {
-    static let ThemeDidChange = Notification.Name("themeChanged")
+  public  static let ThemeDidChange = Notification.Name("themeChanged")
 }
 
 

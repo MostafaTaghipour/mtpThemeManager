@@ -1,0 +1,6 @@
+framework module mtpThemeManager {
+  umbrella header "mtpThemeManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -12,25 +12,25 @@ import UIKit
 extension ThemeManager{
     
     
-     func customizeTheme(tintColor:UIColor,
-                                 textColor:UIColor,
-                                 statusBarStyle:StatusBarStyle,
-                                 navigationBarStyle:NavigationBarStyle,
-                                 tabBarStyle:TabBarStyle,
-                                 toolbarStyle:ToolbarStyle,
-                                 searchBarStyle:SearchBarStyle,
-                                 keyboardStyle:KeyboardStyle,
-                                 textFieldStyle:TextFieldStyle,
-                                 textViewStyle:TextViewStyle,
-                                 activityIndicatorViewStyle:ActivityIndicatorViewStyle,
-                                 progressViewStyle:ProgressViewStyle,
-                                 stepperStyle:StepperStyle,
-                                 segmentedControlStyle:SegmentedControlStyle,
-                                 scrollViewStyle:ScrollViewStyle,
-                                 sliderStyle:SliderStyle,
-                                 switchStyle:SwitchStyle,
-                                 pageControlStyle:PageControlStyle,
-                                 buttonStyle:ButtonStyle){
+    func customizeTheme(tintColor:UIColor,
+                        textColor:UIColor,
+                        statusBarStyle:StatusBarStyle,
+                        navigationBarStyle:NavigationBarStyle,
+                        tabBarStyle:TabBarStyle,
+                        toolbarStyle:ToolbarStyle,
+                        searchBarStyle:SearchBarStyle,
+                        keyboardStyle:KeyboardStyle,
+                        textFieldStyle:TextFieldStyle,
+                        textViewStyle:TextViewStyle,
+                        activityIndicatorViewStyle:ActivityIndicatorViewStyle,
+                        progressViewStyle:ProgressViewStyle,
+                        stepperStyle:StepperStyle,
+                        segmentedControlStyle:SegmentedControlStyle,
+                        scrollViewStyle:ScrollViewStyle,
+                        sliderStyle:SliderStyle,
+                        switchStyle:SwitchStyle,
+                        pageControlStyle:PageControlStyle,
+                        buttonStyle:ButtonStyle){
         
         self.setTintColor(color: tintColor)
         self.setTextColor(color: textColor)
@@ -60,14 +60,16 @@ extension ThemeManager{
         btnAppearance.borderWidth=0
         btnAppearance.tintColor=nil
         btnAppearance.cornerRadius=0
-         btnAppearance.contentEdgeInsets = default_buttonContentInsets
+        btnAppearance.contentEdgeInsets = default_buttonContentInsets
     }
     
-   private func setTintColor(color:UIColor){
-       (UIApplication.shared.delegate as? AppDelegate)?.window?.tintColor=color
+    private func setTintColor(color:UIColor){
+        if let window = (UIApplication.shared.delegate)?.window{
+            window?.tintColor=color
+        }
     }
     
-   private func setTextColor(color:UIColor){
+    private func setTextColor(color:UIColor){
         UILabel.appearance().textColor=color
     }
     
@@ -307,7 +309,7 @@ extension ThemeManager{
     /// setSliderStyle
     ///
     /// - Parameter style: SliderStyle
-   private func setSliderStyle(style:SliderStyle) {
+    private func setSliderStyle(style:SliderStyle) {
         let appearance = UISlider.appearance()
         appearance.minimumTrackTintColor = style.minimumTrackTintColor
         appearance.thumbTintColor = style.thumbTintColor
@@ -331,7 +333,7 @@ extension ThemeManager{
     /// setButtonStyle
     ///
     /// - Parameter style: ButtonStyle
-   private func setButtonStyle(style:ButtonStyle) {
+    private func setButtonStyle(style:ButtonStyle) {
         let appearance = UIButton.appearance()
         
         appearance.tintColor = style.tintColor
@@ -339,9 +341,9 @@ extension ThemeManager{
         appearance.cornerRadius = style.cornerRadius
         appearance.borderWidth = style.borderWidth
         appearance.backgroundColor = style.backgroundColor
-  appearance.contentEdgeInsets = style.contentEdgeInsets ?? default_buttonContentInsets
+        appearance.contentEdgeInsets = style.contentEdgeInsets ?? default_buttonContentInsets
         appearance.clipsToBounds=true
-
+        
     }
     
 }

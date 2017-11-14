@@ -9,7 +9,7 @@
 import UIKit
 
 //Mark:- Theme
-protocol Theme{
+public protocol Theme{
     init()
     
     var id:Int{get}
@@ -37,7 +37,7 @@ protocol Theme{
     var switchStyle:SwitchStyle{get}
 }
 
-extension Theme {
+public extension Theme {
     var backgroundColor:UIColor {
         get{ return .white }
     }
@@ -113,7 +113,7 @@ extension Theme {
 
 
 //Mark:- DayNight
-protocol DayNightTheme:Theme{
+public protocol DayNightTheme:Theme{
     var tintColorNight:UIColor{get}
     var primaryTextColorNight:UIColor{get}
     var secondaryTextColorNight:UIColor{get}
@@ -137,7 +137,7 @@ protocol DayNightTheme:Theme{
     var switchStyleNight:SwitchStyle{get}
 }
 
-extension DayNightTheme{
+public extension DayNightTheme{
     var tintColorNight:UIColor {
         get{ return .white }
     }
@@ -177,10 +177,10 @@ extension DayNightTheme{
     var textFieldStyleNight:TextFieldStyle{
         return TextFieldStyle(backgroundColor: .clear,
                               textColor: primaryTextColorNight,
-                              borderColor: UIColor.white.withAlphaComponent(0.2),
+                              borderColor: UIColor.white.withAlphaComponent(0.3),
                               borderWidth:0.5,
                               cornerRadius:8.0,
-                              placeholderColor: UIColor.white.withAlphaComponent(0.2))
+                              placeholderColor: UIColor.white.withAlphaComponent(0.3))
     }
     var textViewStyleNight:TextViewStyle{
         return TextViewStyle(textColor: primaryTextColorNight)

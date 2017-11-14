@@ -10,8 +10,8 @@ import UIKit
 
 
 
-extension ThemeManager{
-    var tintColor:UIColor?{
+public extension ThemeManager{
+    public var tintColor:UIColor?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -27,7 +27,7 @@ extension ThemeManager{
     }
     
     
-    var backgroundColor:UIColor?{
+    public var backgroundColor:UIColor?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -42,7 +42,7 @@ extension ThemeManager{
         }
     }
     
-    var primaryTextColor:UIColor?{
+    public var primaryTextColor:UIColor?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -57,7 +57,7 @@ extension ThemeManager{
         }
     }
     
-    var secondaryTextColor:UIColor?{
+    public var secondaryTextColor:UIColor?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -74,7 +74,7 @@ extension ThemeManager{
     
     
     
-    var navigationBarStyle:NavigationBarStyle?{
+    public var navigationBarStyle:NavigationBarStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -89,7 +89,7 @@ extension ThemeManager{
         }
     }
     
-    var tabBarStyle:TabBarStyle?{
+    public var tabBarStyle:TabBarStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -104,7 +104,7 @@ extension ThemeManager{
         }
     }
     
-    var toolbarStyle:ToolbarStyle?{
+    public var toolbarStyle:ToolbarStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -119,7 +119,7 @@ extension ThemeManager{
         }
     }
     
-    var searchBarStyle:SearchBarStyle?{
+    public var searchBarStyle:SearchBarStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -134,7 +134,7 @@ extension ThemeManager{
         }
     }
     
-    var statusBarStyle:StatusBarStyle?{
+    public var statusBarStyle:StatusBarStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -149,7 +149,7 @@ extension ThemeManager{
         }
     }
     
-    var buttonStyles:ButtonStyle?{
+    public var buttonStyles:ButtonStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -164,7 +164,7 @@ extension ThemeManager{
         }
     }
     
-    var textFieldStyle:TextFieldStyle?{
+    public var textFieldStyle:TextFieldStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -180,7 +180,7 @@ extension ThemeManager{
     }
     
     
-    var textViewStyle:TextViewStyle?{
+    public var textViewStyle:TextViewStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -195,7 +195,7 @@ extension ThemeManager{
         }
     }
     
-    var keyboardStyle:KeyboardStyle?{
+    public var keyboardStyle:KeyboardStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -210,7 +210,7 @@ extension ThemeManager{
         }
     }
     
-    var activityIndicatorViewStyle:ActivityIndicatorViewStyle?{
+    public var activityIndicatorViewStyle:ActivityIndicatorViewStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -227,7 +227,7 @@ extension ThemeManager{
     
     
     
-    var switchStyle:SwitchStyle?{
+    public var switchStyle:SwitchStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -243,7 +243,7 @@ extension ThemeManager{
     }
     
     
-    var sliderStyle:SliderStyle?{
+    public var sliderStyle:SliderStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -258,7 +258,7 @@ extension ThemeManager{
         }
     }
     
-    var progressViewStyle:ProgressViewStyle?{
+    public var progressViewStyle:ProgressViewStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -273,7 +273,7 @@ extension ThemeManager{
         }
     }
     
-    var pageControlStyle:PageControlStyle?{
+    public var pageControlStyle:PageControlStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -288,7 +288,7 @@ extension ThemeManager{
         }
     }
     
-    var stepperStyle:StepperStyle?{
+    public var stepperStyle:StepperStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -303,7 +303,7 @@ extension ThemeManager{
         }
     }
     
-    var segmentedControlStyle:SegmentedControlStyle?{
+    public var segmentedControlStyle:SegmentedControlStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
@@ -318,7 +318,7 @@ extension ThemeManager{
         }
     }
     
-    var scrollViewStyle:ScrollViewStyle?{
+    public var scrollViewStyle:ScrollViewStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{

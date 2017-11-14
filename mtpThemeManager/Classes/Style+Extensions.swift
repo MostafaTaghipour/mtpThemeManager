@@ -9,7 +9,7 @@
 import UIKit
 
 extension UINavigationBar{
-    func setStyle(style:NavigationBarStyle) {
+    public func setStyle(style:NavigationBarStyle) {
         tintColor = style.tintColor
         titleTextAttributes = style.titleColor != nil ? [NSAttributedStringKey.foregroundColor: style.titleColor!] : ThemeManager.shared.default_navigationBarTitleAttributes
         barStyle = style.barStyle
@@ -24,7 +24,7 @@ extension UINavigationBar{
 
 
 extension UITabBar{
-    func setStyle(style:TabBarStyle) {
+    public func setStyle(style:TabBarStyle) {
         
         if #available(iOS 10, *),let color=style.unselectedTintColor {
             unselectedItemTintColor = color
@@ -43,7 +43,7 @@ extension UITabBar{
 
 
 extension UIToolbar{
-    func setStyle(style:ToolbarStyle) {
+    public func setStyle(style:ToolbarStyle) {
         tintColor = style.tintColor
         barTintColor = style.backgroundColor
         barStyle = style.barStyle
@@ -57,7 +57,7 @@ extension UIToolbar{
 
 
 extension UISearchBar{
-    func setStyle(style:SearchBarStyle) {
+    public func setStyle(style:SearchBarStyle) {
         
         
         
@@ -81,7 +81,7 @@ extension UISearchBar{
 }
 
 extension UITextField{
-    func setStyle(style:TextFieldStyle) {
+    public func setStyle(style:TextFieldStyle) {
         
         borderStyle = style.borderStyle
         textColor = style.textColor
@@ -97,7 +97,7 @@ extension UITextField{
 
 
 extension UITextView{
-    func setStyle(style:TextViewStyle) {
+    public func setStyle(style:TextViewStyle) {
         
         textColor = style.textColor
         borderColor = style.borderColor
@@ -113,7 +113,7 @@ extension UITextView{
 
 
 extension UIActivityIndicatorView{
-    func setStyle(style:ActivityIndicatorViewStyle) {
+    public func setStyle(style:ActivityIndicatorViewStyle) {
         activityIndicatorViewStyle = style.style
         color = style.color
         
@@ -122,14 +122,14 @@ extension UIActivityIndicatorView{
 
 
 extension UIScrollView{
-    func setStyle(style:ScrollViewStyle) {
+    public func setStyle(style:ScrollViewStyle) {
         UIScrollView.appearance().indicatorStyle = style.indicatorStyle
     }
 }
 
 
 extension UISegmentedControl{
-    func setStyle(style:SegmentedControlStyle) {
+    public func setStyle(style:SegmentedControlStyle) {
         tintColor = style.tintColor
         backgroundColor = style.backgroundColor
     }
@@ -138,7 +138,7 @@ extension UISegmentedControl{
 
 
 extension UIStepper{
-    func setStyle(style:StepperStyle) {
+    public func setStyle(style:StepperStyle) {
         tintColor = style.tintColor
         backgroundColor = style.backgroundColor
     }
@@ -146,7 +146,7 @@ extension UIStepper{
 
 
 extension UIPageControl{
-    func setStyle(style:PageControlStyle) {
+    public func setStyle(style:PageControlStyle) {
         currentPageIndicatorTintColor = style.currentPageIndicatorTintColor
         pageIndicatorTintColor = style.pageIndicatorTintColor
     }
@@ -155,7 +155,7 @@ extension UIPageControl{
 
 
 extension UIProgressView{
-    func setStyle(style:ProgressViewStyle) {
+    public func setStyle(style:ProgressViewStyle) {
         progressTintColor = style.progressTintColor
         trackTintColor = style.trackTintColor
         progressViewStyle = style.style
@@ -164,7 +164,7 @@ extension UIProgressView{
 
 
 extension UISlider{
-    func setStyle(style:SliderStyle) {
+    public func setStyle(style:SliderStyle) {
         minimumTrackTintColor = style.minimumTrackTintColor
         thumbTintColor = style.thumbTintColor
         maximumTrackTintColor = style.maximumTrackTintColor
@@ -173,7 +173,7 @@ extension UISlider{
 
 
 extension UISwitch{
-    func setStyle(style:SwitchStyle) {
+    public func setStyle(style:SwitchStyle) {
         onTintColor = style.onTintColor
         thumbTintColor = style.thumbTintColor
         tintColor = style.tintColor
@@ -182,7 +182,7 @@ extension UISwitch{
 
 
 extension UIButton{
-    func setStyle(style:ButtonStyle) {
+    public func setStyle(style:ButtonStyle) {
         tintColor = style.tintColor
         borderColor = style.borderColor
         cornerRadius = style.cornerRadius

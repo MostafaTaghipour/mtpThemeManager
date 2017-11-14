@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ThemeManager {
+public class ThemeManager {
     
     private var _currentTheme:Theme?
     public var currentTheme:Theme?{
@@ -31,7 +31,7 @@ final class ThemeManager {
         }
     }
     
-    lazy var  availableThemes:[Theme]={
+   public lazy var  availableThemes:[Theme]={
         var themes:[Theme]=[]
         let classes=getClassList()
         
@@ -55,7 +55,7 @@ final class ThemeManager {
     
     
     // set theme
-    func setTheme(theme:Theme){
+   public func setTheme(theme:Theme){
         guard _currentTheme != theme else {
             return
         }
@@ -88,7 +88,7 @@ final class ThemeManager {
     
     
     //set theme night mode
-    func setTheme(dayNight theme:DayNightTheme,nightMode:Bool? = nil){
+  public func setTheme(dayNight theme:DayNightTheme,nightMode:Bool? = nil){
         
         let isNightModeEnable:Bool = nightMode ?? enableNightModel
         
@@ -150,7 +150,9 @@ final class ThemeManager {
     
     //MARK:- default values
     private func setupDefaults() {
-        default_tintColor = (UIApplication.shared.delegate as? AppDelegate)?.window?.tintColor
+        if let window = (UIApplication.shared.delegate)?.window{
+            default_tintColor = window?.tintColor
+        }
         default_navigationBarBackground = UINavigationBar.appearance().backgroundImage(for: UIBarMetrics.default)
         default_navigationBarTitleAttributes = UINavigationBar.appearance().titleTextAttributes
         default_bar_shadow = UINavigationBar.appearance().shadowImage
@@ -183,6 +185,7 @@ final class ThemeManager {
  . appearance
  . set theme
  . properties
+ . style extension
  */
 
 

@@ -15,6 +15,9 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		A01D828B30A59B78AF66698C /* Pods_mtpThemeManager_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9553C7FFB786D451188DC0C1 /* Pods_mtpThemeManager_Tests.framework */; };
+		DA3247921FBA214B00548813 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3247911FBA214B00548813 /* SettingsViewController.swift */; };
+		DA3247941FBA2BB600548813 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3247931FBA2BB600548813 /* Themes.swift */; };
+		DA6BDD151FBB5981005442BB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6BDD141FBB5981005442BB /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +45,14 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6B51C31BE45D9ADC0FFCC35C /* Pods-mtpThemeManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mtpThemeManager_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-mtpThemeManager_Example/Pods-mtpThemeManager_Example.release.xcconfig"; sourceTree = "<group>"; };
-		728E717B727F9F5E5CFF365E /* mtpThemeManager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = mtpThemeManager.podspec; path = ../mtpThemeManager.podspec; sourceTree = "<group>"; };
+		728E717B727F9F5E5CFF365E /* mtpThemeManager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = mtpThemeManager.podspec; path = ../mtpThemeManager.podspec; sourceTree = "<group>"; };
 		9553C7FFB786D451188DC0C1 /* Pods_mtpThemeManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mtpThemeManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CD800BD20636D48FA65A11 /* Pods-mtpThemeManager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mtpThemeManager_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mtpThemeManager_Tests/Pods-mtpThemeManager_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		DC5EC4B5776DBBCBF5C3DCE7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		F951EEDF6FEF0EE075CDC001 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		DA3247911FBA214B00548813 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DA3247931FBA2BB600548813 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		DA6BDD141FBB5981005442BB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		DC5EC4B5776DBBCBF5C3DCE7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F951EEDF6FEF0EE075CDC001 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +109,13 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				DA6BDD141FBB5981005442BB /* Helpers.swift */,
+				DA3247911FBA214B00548813 /* SettingsViewController.swift */,
+				DA3247931FBA2BB600548813 /* Themes.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for mtpThemeManager";
@@ -371,7 +380,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				DA3247941FBA2BB600548813 /* Themes.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				DA6BDD151FBB5981005442BB /* Helpers.swift in Sources */,
+				DA3247921FBA214B00548813 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
