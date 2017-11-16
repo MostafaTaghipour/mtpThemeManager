@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'mtpThemeManager'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'An iOS theme manager with all the features.'
 
 # This description is used to generate tags and improve search results.
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 An iOS theme manager with all the features.
 Everything you expect from a theme manager,
-contains applay theme to whole app, multiple themes, night mode, styles , ...
+contains apply theme to whole app, multiple themes, night mode, styles , ...
                        DESC
 
   s.homepage         = 'https://github.com/MostafaTaghipour/mtpThemeManager'

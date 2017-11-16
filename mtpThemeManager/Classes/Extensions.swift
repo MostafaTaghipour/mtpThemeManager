@@ -11,21 +11,37 @@ import UIKit
 
 extension Notification.Name
 {
-  public  static let ThemeDidChange = Notification.Name("themeChanged")
+    public  static let ThemeDidChange = Notification.Name("themeChanged")
 }
 
 
 
 extension UIViewController{
-   
-        open override func awakeFromNib() {
-            super.awakeFromNib()
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        if let bgColor=ThemeManager.shared.backgroundColor{
             
-            if let bgColor=ThemeManager.shared.backgroundColor{
+            if view.backgroundColor != bgColor{
                 view.backgroundColor = bgColor
+                
             }
         }
-
+        else{
+            let when = DispatchTime.now() + 0.2
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                if let bgColor=ThemeManager.shared.backgroundColor{
+                    
+                    if self.view.backgroundColor != bgColor{
+                        self.view.backgroundColor = bgColor
+                        
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
 
