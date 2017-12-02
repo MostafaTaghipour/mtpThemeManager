@@ -31,7 +31,7 @@ public class ThemeManager {
         }
     }
     
-   public lazy var  availableThemes:[Theme]={
+    public lazy var  availableThemes:[Theme]={
         var themes:[Theme]=[]
         let classes=getClassList()
         
@@ -55,7 +55,7 @@ public class ThemeManager {
     
     
     // set theme
-   public func setTheme(theme:Theme){
+    public func setTheme(theme:Theme){
         guard _currentTheme != theme else {
             return
         }
@@ -88,7 +88,7 @@ public class ThemeManager {
     
     
     //set theme night mode
-  public func setTheme(dayNight theme:DayNightTheme,nightMode:Bool? = nil){
+    public func setTheme(dayNight theme:DayNightTheme,nightMode:Bool? = nil){
         
         let isNightModeEnable:Bool = nightMode ?? enableNightModel
         
@@ -154,19 +154,17 @@ public class ThemeManager {
             default_tintColor = window?.tintColor
         }
         default_navigationBarBackground = UINavigationBar.appearance().backgroundImage(for: UIBarMetrics.default)
-        default_navigationBarTitleAttributes = UINavigationBar.appearance().titleTextAttributes
         default_bar_shadow = UINavigationBar.appearance().shadowImage
         default_tabBarBackground = UITabBar.appearance().backgroundImage
         default_searchBarBackground = UISearchBar.appearance().backgroundImage(for: .any, barMetrics: .default)
         default_toolbarBackground = UIToolbar.appearance().backgroundImage(forToolbarPosition: .any, barMetrics: .default)
         default_searchFieldColor=UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor
-       default_buttonContentInsets = UIButton.appearance().contentEdgeInsets
+        default_buttonContentInsets = UIButton.appearance().contentEdgeInsets
         default_textViewContainrInsets = UITextView.appearance().textContainerInset
     }
     
     var default_tintColor:UIColor?
     var default_navigationBarBackground:UIImage?
-    var default_navigationBarTitleAttributes:[NSAttributedStringKey : Any]?
     var default_tabBarBackground:UIImage?
     var default_toolbarBackground:UIImage?
     var default_searchBarBackground:UIImage?

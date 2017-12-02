@@ -17,9 +17,9 @@ public protocol Style {
 //MARK:- StatusBarStyle
 public struct StatusBarStyle: Style {
     
-    var backgroundColor:UIColor? = nil
-    var style:UIStatusBarStyle = .default
-    var isHidden:Bool = false
+    public var backgroundColor:UIColor? = nil
+    public var style:UIStatusBarStyle = .default
+    public var isHidden:Bool = false
     
     public init(backgroundColor:UIColor? = nil,
          style:UIStatusBarStyle = .default,
@@ -34,14 +34,14 @@ public struct StatusBarStyle: Style {
 //MARK:- NavigationBarStyle
 public struct NavigationBarStyle: Style {
     
-    var backgroundColor:UIColor? = nil
-    var titleColor:UIColor? = nil
-    var tintColor:UIColor? = nil
-    var barStyle:UIBarStyle = .default
-    var isTranslucent:Bool = true
-    var isHidden:Bool = false
-    var isTransparent:Bool = false
-    var isHairlineHidden:Bool = false
+    public var backgroundColor:UIColor? = nil
+    public var titleColor:UIColor? = nil
+    public var tintColor:UIColor? = nil
+    public var barStyle:UIBarStyle = .default
+    public var isTranslucent:Bool = true
+    public var isHidden:Bool = false
+    public var isTransparent:Bool = false
+    public var isHairlineHidden:Bool = false
     
    public init(backgroundColor:UIColor? = nil,
          titleColor:UIColor? = nil,
@@ -66,14 +66,14 @@ public struct NavigationBarStyle: Style {
 //MARK:- TabBarStyle
 public struct TabBarStyle: Style {
     
-    var backgroundColor:UIColor? = nil
-    var badgeColor:UIColor? = nil
-    var tintColor:UIColor? = nil
-    var unselectedTintColor:UIColor? = nil
-    var barStyle:UIBarStyle = .default
-    var isTranslucent:Bool = true
-    var isTransparent:Bool = false
-    var isHairlineHidden:Bool = false
+    public var backgroundColor:UIColor? = nil
+    public var badgeColor:UIColor? = nil
+    public var tintColor:UIColor? = nil
+    public var unselectedTintColor:UIColor? = nil
+    public var barStyle:UIBarStyle = .default
+    public var isTranslucent:Bool = true
+    public var isTransparent:Bool = false
+    public var isHairlineHidden:Bool = false
     
     public init(backgroundColor:UIColor? = nil,
          badgeColor:UIColor? = nil,
@@ -99,12 +99,12 @@ public struct TabBarStyle: Style {
 //MARK:- ToolbarStyle
 public struct ToolbarStyle: Style {
     
-    var backgroundColor:UIColor? = nil
-    var tintColor:UIColor? = nil
-    var barStyle:UIBarStyle = .default
-    var isTranslucent:Bool = true
-    var isTransparent:Bool = false
-    var isHairlineHidden:Bool = false
+    public var backgroundColor:UIColor? = nil
+    public var tintColor:UIColor? = nil
+    public var barStyle:UIBarStyle = .default
+    public var isTranslucent:Bool = true
+    public var isTransparent:Bool = false
+    public var isHairlineHidden:Bool = false
     
     public init(backgroundColor:UIColor? = nil,
          tintColor:UIColor? = nil,
@@ -126,13 +126,13 @@ public struct ToolbarStyle: Style {
 //MARK:- SearchBarStyle
 public struct SearchBarStyle: Style {
     
-    var backgroundColor:UIColor? = nil
-    var tintColor:UIColor? = nil
-    var barStyle:UIBarStyle = .default
-    var searchBarStyle:UISearchBarStyle = .default
-    var isTranslucent:Bool = true
-    var isTransparent:Bool = false
-    var textFieldStyle:TextFieldStyle? = nil
+    public var backgroundColor:UIColor? = nil
+    public var tintColor:UIColor? = nil
+    public var barStyle:UIBarStyle = .default
+    public var searchBarStyle:UISearchBarStyle = .default
+    public var isTranslucent:Bool = true
+    public var isTransparent:Bool = false
+    public var textFieldStyle:TextFieldStyle? = nil
     
     public init(backgroundColor:UIColor? = nil,
          tintColor:UIColor? = nil,
@@ -157,14 +157,14 @@ public struct SearchBarStyle: Style {
 //MARK:- TextFieldStyle
 public struct TextFieldStyle: Style {
     
-    var borderColor: UIColor?=nil
-    var borderWidth: CGFloat=0
-    var cornerRadius: CGFloat=0
-    var backgroundColor: UIColor?=nil
-    var textColor:UIColor? = nil
-    var placeholderColor:UIColor? = nil
-    var borderStyle:UITextBorderStyle = .roundedRect
-    var clearButtonMode:UITextFieldViewMode = .never
+    public var borderColor: UIColor?=nil
+    public var borderWidth: CGFloat=0
+    public var cornerRadius: CGFloat=0
+    public var backgroundColor: UIColor?=nil
+    public var textColor:UIColor? = nil
+    public var placeholderColor:UIColor? = nil
+    public var borderStyle:UITextBorderStyle = .roundedRect
+    public var clearButtonMode:UITextFieldViewMode = .never
     
     public init(backgroundColor:UIColor? = nil,
          textColor:UIColor? = nil,
@@ -190,12 +190,12 @@ public struct TextFieldStyle: Style {
 //MARK:- TextViewStyle
 public struct TextViewStyle: Style {
     
-    var backgroundColor:UIColor? = nil
-    var textColor:UIColor? = nil
-    var borderColor:UIColor? = nil
-    var borderWidth:CGFloat = 0
-    var cornerRadius:CGFloat = 0
-    var textContainerInset:UIEdgeInsets? = nil
+    public var backgroundColor:UIColor? = nil
+    public var textColor:UIColor? = nil
+    public var borderColor:UIColor? = nil
+    public var borderWidth:CGFloat = 0
+    public var cornerRadius:CGFloat = 0
+    public var textContainerInset:UIEdgeInsets? = nil
     
     public init(backgroundColor:UIColor? = nil,
          textColor:UIColor? = nil,
@@ -217,12 +217,12 @@ public struct TextViewStyle: Style {
 //MARK:- ButtonStyle
 public struct ButtonStyle: Style {
 
-    var backgroundColor:UIColor? = nil
-    var tintColor:UIColor? = nil
-    var borderColor:UIColor? = nil
-    var borderWidth:CGFloat = 0
-    var cornerRadius:CGFloat = 0
-    var contentEdgeInsets:UIEdgeInsets? = nil
+    public var backgroundColor:UIColor? = nil
+    public var tintColor:UIColor? = nil
+    public var borderColor:UIColor? = nil
+    public var borderWidth:CGFloat = 0
+    public var cornerRadius:CGFloat = 0
+    public var contentEdgeInsets:UIEdgeInsets? = nil
     
     public init(backgroundColor:UIColor? = nil,
          tintColor:UIColor? = nil,
@@ -245,8 +245,8 @@ public struct ButtonStyle: Style {
 //MARK:- ActivityIndicatorViewStyle
 public struct ActivityIndicatorViewStyle: Style {
     
-    var style: UIActivityIndicatorViewStyle = .gray
-    var color:UIColor? = nil
+    public var style: UIActivityIndicatorViewStyle = .gray
+    public var color:UIColor? = nil
     
     public init(style: UIActivityIndicatorViewStyle = .gray,
          color:UIColor? = nil) {
@@ -260,7 +260,7 @@ public struct ActivityIndicatorViewStyle: Style {
 //MARK:- ScrollViewStyle
 public struct ScrollViewStyle: Style {
     
-    var indicatorStyle: UIScrollViewIndicatorStyle = .default
+    public var indicatorStyle: UIScrollViewIndicatorStyle = .default
     
     public init(indicatorStyle: UIScrollViewIndicatorStyle = .default) {
         self.indicatorStyle=indicatorStyle
@@ -271,8 +271,8 @@ public struct ScrollViewStyle: Style {
 //MARK:- SegmentedControlStyle
 public struct SegmentedControlStyle: Style {
     
-    var backgroundColor:UIColor? = nil
-    var tintColor:UIColor? = nil
+    public var backgroundColor:UIColor? = nil
+    public var tintColor:UIColor? = nil
     
     public init(backgroundColor:UIColor? = nil,
          tintColor:UIColor? = nil) {
@@ -286,8 +286,8 @@ public struct SegmentedControlStyle: Style {
 //MARK:- StepperStyle
 public struct StepperStyle: Style {
     
-    var backgroundColor:UIColor? = nil
-    var tintColor:UIColor? = nil
+    public var backgroundColor:UIColor? = nil
+    public var tintColor:UIColor? = nil
     
     public init(backgroundColor:UIColor? = nil,
          tintColor:UIColor? = nil) {
@@ -301,8 +301,8 @@ public struct StepperStyle: Style {
 //MARK:- PageControlStyle
 public struct PageControlStyle: Style {
     
-    var pageIndicatorTintColor:UIColor? = nil
-    var currentPageIndicatorTintColor:UIColor? = nil
+    public var pageIndicatorTintColor:UIColor? = nil
+    public var currentPageIndicatorTintColor:UIColor? = nil
     
     public init(pageIndicatorTintColor:UIColor? = nil,
          currentPageIndicatorTintColor:UIColor? = nil) {
@@ -316,9 +316,9 @@ public struct PageControlStyle: Style {
 //MARK:- ProgressViewStyle
 public struct ProgressViewStyle: Style {
     
-    var progressTintColor:UIColor? = nil
-    var trackTintColor:UIColor? = nil
-    var style:UIProgressViewStyle = .default
+    public var progressTintColor:UIColor? = nil
+    public var trackTintColor:UIColor? = nil
+    public var style:UIProgressViewStyle = .default
     
     public init(progressTintColor:UIColor? = nil,
          trackTintColor:UIColor? = nil,
@@ -334,9 +334,9 @@ public struct ProgressViewStyle: Style {
 //MARK:- SliderStyle
 public struct SliderStyle: Style {
     
-    var minimumTrackTintColor:UIColor? = nil
-    var maximumTrackTintColor:UIColor? = nil
-    var thumbTintColor:UIColor? = nil
+    public var minimumTrackTintColor:UIColor? = nil
+    public var maximumTrackTintColor:UIColor? = nil
+    public var thumbTintColor:UIColor? = nil
     
     public init(minimumTrackTintColor:UIColor? = nil,
          maximumTrackTintColor:UIColor? = nil,
@@ -351,9 +351,9 @@ public struct SliderStyle: Style {
 //MARK:- SwitchStyle
 public struct SwitchStyle: Style {
     
-    var thumbTintColor:UIColor? = nil
-    var onTintColor:UIColor? = nil
-    var tintColor:UIColor? = nil
+    public var thumbTintColor:UIColor? = nil
+    public var onTintColor:UIColor? = nil
+    public var tintColor:UIColor? = nil
     
     public init(tintColor:UIColor? = nil,
          onTintColor:UIColor? = nil,
@@ -369,7 +369,7 @@ public struct SwitchStyle: Style {
 //MARK:- KeyboardStyle
 public struct KeyboardStyle: Style {
     
-    var appearance:UIKeyboardAppearance = .default
+    public var appearance:UIKeyboardAppearance = .default
     
     public init(appearance:UIKeyboardAppearance = .default) {
         self.appearance=appearance

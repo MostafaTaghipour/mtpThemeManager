@@ -85,14 +85,38 @@ extension ThemeManager{
         
         let apperance = UINavigationBar.appearance()
         
-        apperance.tintColor = style.tintColor
-        apperance.titleTextAttributes = style.titleColor != nil ? [NSAttributedStringKey.foregroundColor: style.titleColor!] : default_navigationBarTitleAttributes
+        var titleAttr = apperance.titleTextAttributes ?? [:]
+        if let titleColor = style.titleColor{
+            titleAttr.updateValue(titleColor, forKey: NSAttributedStringKey.foregroundColor)
+        }
+        else{
+            titleAttr.removeValue(forKey: NSAttributedStringKey.foregroundColor)
+        }
+        apperance.titleTextAttributes = titleAttr
+        
+        
+        let buttonBarAppearance=UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationBar.self])
+        var barButtonTitleAttr = buttonBarAppearance.titleTextAttributes(for: .normal) ?? [:]
+        if let buttonColor=style.tintColor{
+            barButtonTitleAttr.updateValue(buttonColor, forKey: NSAttributedStringKey.foregroundColor.rawValue)
+        }
+        else{
+            barButtonTitleAttr.updateValue(tintColor!, forKey: NSAttributedStringKey.foregroundColor.rawValue)
+        }
+        let convertedAttributes = Dictionary(uniqueKeysWithValues:
+            barButtonTitleAttr.lazy.map { (NSAttributedStringKey($0.key), $0.value) }
+        )
+        buttonBarAppearance.setTitleTextAttributes(convertedAttributes, for: .normal)
+        
+        
         apperance.barStyle = style.barStyle
         apperance.isTranslucent = style.isTranslucent || style.isTransparent
         apperance.shadowImage = style.isHairlineHidden || style.isTransparent ? UIImage() : default_bar_shadow
         apperance.setBackgroundImage(style.isTransparent ? UIImage() : default_navigationBarBackground , for:.default)
         apperance.barTintColor = style.backgroundColor
+        apperance.tintColor = style.tintColor
         apperance.isHidden = style.isHidden
+        
     }
     
     

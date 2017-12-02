@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'mtpThemeManager'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'An iOS theme manager with all the features.'
 
 # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ contains apply theme to whole app, multiple themes, night mode, styles , ...
   s.homepage         = 'https://github.com/MostafaTaghipour/mtpThemeManager'
   s.screenshots      = 'https://raw.githubusercontent.com/MostafaTaghipour/mtpThemeManager/master/screenshots/1.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'mostafa.taghipour@ymail.com' => 'mostafa.taghipour@ymail.com' }
+  s.author           = { 'Mostafa Taghipour' => 'mostafa.taghipour@ymail.com' }
   s.source           = { :git => 'https://github.com/MostafaTaghipour/mtpThemeManager.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 

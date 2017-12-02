@@ -11,7 +11,7 @@ import UIKit
 extension UINavigationBar{
     public func setStyle(style:NavigationBarStyle) {
         tintColor = style.tintColor
-        titleTextAttributes = style.titleColor != nil ? [NSAttributedStringKey.foregroundColor: style.titleColor!] : ThemeManager.shared.default_navigationBarTitleAttributes
+        titleTextAttributes = style.titleColor != nil ? [NSAttributedStringKey.foregroundColor: style.titleColor!] : UINavigationBar.appearance().titleTextAttributes
         barStyle = style.barStyle
         isTranslucent = style.isTranslucent || style.isTransparent
         shadowImage = style.isHairlineHidden || style.isTransparent ? UIImage() : ThemeManager.shared.default_bar_shadow
@@ -58,9 +58,7 @@ extension UIToolbar{
 
 extension UISearchBar{
     public func setStyle(style:SearchBarStyle) {
-        
-        
-        
+
         barTintColor = style.backgroundColor
         tintColor = style.tintColor
         searchBarStyle = .minimal
@@ -68,13 +66,13 @@ extension UISearchBar{
         isTranslucent = style.isTranslucent || style.isTransparent
         setBackgroundImage(style.isTransparent ? UIImage() : ThemeManager.shared.default_searchBarBackground, for: .any, barMetrics: .default)
         
-        if let fieldStyle=style.textFieldStyle {
-            let fieldAppearence=UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self])
-            fieldAppearence.backgroundColor = fieldStyle.backgroundColor ?? ThemeManager.shared.default_searchFieldColor
-            fieldAppearence.borderColor=fieldStyle.borderColor
-            fieldAppearence.borderWidth=fieldStyle.borderWidth
-            fieldAppearence.cornerRadius=fieldStyle.cornerRadius
-            fieldAppearence.clearButtonMode = fieldStyle.clearButtonMode
+      if let fieldStyle=style.textFieldStyle ,
+        let textField=value(forKey: "searchField") as? UITextField{
+            textField.backgroundColor = fieldStyle.backgroundColor ?? ThemeManager.shared.default_searchFieldColor
+            textField.borderColor=fieldStyle.borderColor
+            textField.borderWidth=fieldStyle.borderWidth
+            textField.cornerRadius=fieldStyle.cornerRadius
+            textField.clearButtonMode = fieldStyle.clearButtonMode
         }
         
     }
@@ -90,7 +88,7 @@ extension UITextField{
         borderWidth = style.borderWidth
         backgroundColor = style.backgroundColor
         clearButtonMode = style.clearButtonMode
-        UILabel.appearance(whenContainedInInstancesOf: [UITextField.self]).textColor = style.placeholderColor
+        placeHolderColor = style.placeholderColor
         
     }
 }
