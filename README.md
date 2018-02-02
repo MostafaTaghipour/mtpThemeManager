@@ -39,10 +39,10 @@ pod 'mtpThemeManager'
 2. Define a class that conform Theme protocol
 ```swift
 class RedTheme:Theme {
-required  init() {}
-var id: Int=1
-var displayName: String="Red"
-var tintColor: UIColor = .red
+    required  init() {}
+    var id: Int=1
+    var displayName: String="Red"
+    var tintColor: UIColor = .red
 }
 ```
 
@@ -50,9 +50,9 @@ var tintColor: UIColor = .red
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-ThemeManager.shared.setTheme(theme: RedTheme())
+    ThemeManager.shared.setTheme(theme: RedTheme())
 
-return true
+    return true
 }
 ```
 
@@ -67,10 +67,10 @@ thats it, now run your app and enjoy it
 To apply night mode you must conform DayNightTheme protocol
 ```swift
 class RedTheme:DayNightTheme {
-required  init() {}
-var id: Int=1
-var displayName: String="Red"
-var tintColor: UIColor = .red
+    required  init() {}
+    var id: Int=1
+    var displayName: String="Red"
+    var tintColor: UIColor = .red
 }
 ```
 
@@ -93,13 +93,13 @@ You can customize whole theme for example to customize status bar, just override
 
 ```swift
 class RedTheme:Theme {
-required  init() {}
-var id: Int=1
-var displayName: String="Red"
-var tintColor: UIColor = .red
+    required  init() {}
+    var id: Int=1
+    var displayName: String="Red"
+    var tintColor: UIColor = .red
 
-// you can override styles in your theme
-var statusBarStyle: StatusBarStyle=StatusBarStyle(backgroundColor: .red, style: .lightContent)
+    // you can override styles in your theme
+    var statusBarStyle: StatusBarStyle=StatusBarStyle(backgroundColor: .red, style: .lightContent)
 }
 ```
 
@@ -163,12 +163,12 @@ let roundButtonStyle=ButtonStyle(tintColor: .orange, borderColor: .orange, borde
 let riseduttonStyle=ButtonStyle(backgroundColor: UIColor.init(red: 90/255, green: 200/255, blue: 250/255, alpha: 1) , tintColor: .white)
 
 override func viewDidLoad() {
-super.viewDidLoad()
+    super.viewDidLoad()
 
-button1.setStyle(style: roundButtonStyle)
-button2.setStyle(style: roundButtonStyle)
-button3.setStyle(style: roundButtonStyle)
-button4.setStyle(style: riseduttonStyle)
+    button1.setStyle(style: roundButtonStyle)
+    button2.setStyle(style: roundButtonStyle)
+    button3.setStyle(style: roundButtonStyle)
+    button4.setStyle(style: riseduttonStyle)
 
 }
 ```
@@ -198,11 +198,11 @@ button4.setStyle(style: riseduttonStyle)
 You can access current theme properties like current tint color and etc
 ```swift
 override func viewDidLoad() {
-super.viewDidLoad()
+    super.viewDidLoad()
 
-self.navigationController?.navigationBar.tintColor = .white
-// apply current themeColor to navigation bar barTintColor
-self.navigationController?.navigationBar.barTintColor = ThemeManager.shared.tintColor
+    self.navigationController?.navigationBar.tintColor = .white
+    // apply current themeColor to navigation bar barTintColor
+    self.navigationController?.navigationBar.barTintColor = ThemeManager.shared.tintColor
 
 }
 ```
@@ -237,17 +237,17 @@ self.navigationController?.navigationBar.barTintColor = ThemeManager.shared.tint
 There is a notification that fired when theme did changed
 ```swift
 override func viewDidLoad() {
-super.viewDidLoad()
+    super.viewDidLoad()
 
-NotificationCenter.default.addObserver(self, selector: #selector(themeDidChanged(notification:)), name: NSNotification.Name.ThemeDidChange, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(themeDidChanged(notification:)), name: NSNotification.Name.ThemeDidChange, object: nil)
 
 }
 
 
 @objc func themeDidChanged(notification:Notification)  {
-if let theme=notification.object as? Theme{
-print(theme.displayName)
-}
+    if let theme=notification.object as? Theme{
+        print(theme.displayName)
+    }
 }
 ```
 
