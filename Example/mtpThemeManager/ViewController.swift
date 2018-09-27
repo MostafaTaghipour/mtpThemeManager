@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import mtpThemeManager
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var subtitleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        subtitleLabel.textColor = secondaryTextColor
     }
 
     override func didReceiveMemoryWarning() {

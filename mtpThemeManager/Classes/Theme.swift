@@ -15,8 +15,7 @@ public protocol Theme{
     var id:Int{get}
     var displayName:String{get}
     var tintColor:UIColor{get}
-    var primaryTextColor:UIColor{get}
-    var secondaryTextColor:UIColor{get}
+    var textColor:UIColor{get}
     var backgroundColor:UIColor{get}
     var navigationBarStyle:NavigationBarStyle{get}
     var tabBarStyle:TabBarStyle{get}
@@ -41,12 +40,10 @@ public extension Theme {
     var backgroundColor:UIColor {
         get{ return .white }
     }
-    var primaryTextColor:UIColor {
+    var textColor:UIColor {
         get{ return UIColor.darkText }
     }
-    var secondaryTextColor:UIColor {
-        get{ return UIColor.black.withAlphaComponent(0.5) }
-    }
+   
     var navigationBarStyle:NavigationBarStyle {
         get{ return NavigationBarStyle() }
     }
@@ -58,7 +55,7 @@ public extension Theme {
     }
     var searchBarStyle:SearchBarStyle {
         get{ return SearchBarStyle(textFieldStyle:TextFieldStyle(backgroundColor: nil,
-                                                                 textColor: primaryTextColor,
+                                                                 textColor: textColor,
                                                                  borderColor: nil,
                                                                  borderWidth:0,
                                                                  cornerRadius:8.0,
@@ -75,7 +72,7 @@ public extension Theme {
     }
     var textFieldStyle:TextFieldStyle{
         return TextFieldStyle(backgroundColor: .clear,
-                              textColor: primaryTextColor,
+                              textColor: textColor,
                               borderColor: .lightGray,
                               borderWidth:0.5,
                               cornerRadius:8.0,
@@ -83,7 +80,7 @@ public extension Theme {
     }
     
     var textViewStyle:TextViewStyle{
-        return TextViewStyle(textColor: primaryTextColor)
+        return TextViewStyle(textColor: textColor)
     }
     var activityIndicatorViewStyle : ActivityIndicatorViewStyle {
         return ActivityIndicatorViewStyle()
@@ -115,8 +112,7 @@ public extension Theme {
 //Mark:- DayNight
 public protocol DayNightTheme:Theme{
     var tintColorNight:UIColor{get}
-    var primaryTextColorNight:UIColor{get}
-    var secondaryTextColorNight:UIColor{get}
+    var textColorNight:UIColor{get}
     var backgroundColorNight:UIColor{get}
     var navigationBarStyleNight:NavigationBarStyle{get}
     var tabBarStyleNight:TabBarStyle{get}
@@ -141,11 +137,8 @@ public extension DayNightTheme{
     var tintColorNight:UIColor {
         get{ return .white }
     }
-    var primaryTextColorNight:UIColor {
+    var textColorNight:UIColor {
         get{ return UIColor.lightText }
-    }
-    var secondaryTextColorNight:UIColor {
-        get{ return UIColor.white.withAlphaComponent(0.5) }
     }
     var backgroundColorNight:UIColor {
         get{ return UIColor(red: 31/255, green: 33/255, blue: 36/255, alpha: 1) }
@@ -162,7 +155,7 @@ public extension DayNightTheme{
     var searchBarStyleNight:SearchBarStyle {
         get{ return SearchBarStyle(barStyle: .black,
                                    textFieldStyle: TextFieldStyle(backgroundColor: nil,
-                                                                  textColor: primaryTextColorNight,
+                                                                  textColor: textColorNight,
                                                                   borderColor: nil,
                                                                   borderWidth:0,
                                                                   cornerRadius:8.0,
@@ -176,14 +169,14 @@ public extension DayNightTheme{
     }
     var textFieldStyleNight:TextFieldStyle{
         return TextFieldStyle(backgroundColor: .clear,
-                              textColor: primaryTextColorNight,
+                              textColor: textColorNight,
                               borderColor: UIColor.white.withAlphaComponent(0.3),
                               borderWidth:0.5,
                               cornerRadius:8.0,
                               placeholderColor: UIColor.white.withAlphaComponent(0.3))
     }
     var textViewStyleNight:TextViewStyle{
-        return TextViewStyle(textColor: primaryTextColorNight)
+        return TextViewStyle(textColor: textColorNight)
     }
     var activityIndicatorViewStyleNight : ActivityIndicatorViewStyle {
         return ActivityIndicatorViewStyle(color: .white)

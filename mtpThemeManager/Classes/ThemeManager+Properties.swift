@@ -15,7 +15,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.tintColorNight : theme.tintColor
+                    return isItNight ? theme.tintColorNight : theme.tintColor
                 }
                 else{
                     return unwrapedCurrentTheme.tintColor
@@ -31,7 +31,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.backgroundColorNight : theme.backgroundColor
+                    return isItNight ? theme.backgroundColorNight : theme.backgroundColor
                 }
                 else{
                     return unwrapedCurrentTheme.backgroundColor
@@ -46,10 +46,10 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.primaryTextColorNight : theme.primaryTextColor
+                    return isItNight ? theme.textColorNight : theme.textColor
                 }
                 else{
-                    return unwrapedCurrentTheme.primaryTextColor
+                    return unwrapedCurrentTheme.textColor
                 }
             }
             
@@ -57,28 +57,12 @@ public extension ThemeManager{
         }
     }
     
-    public var secondaryTextColor:UIColor?{
-        get{
-            if let unwrapedCurrentTheme=currentTheme{
-                if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.secondaryTextColorNight : theme.secondaryTextColor
-                }
-                else{
-                    return unwrapedCurrentTheme.secondaryTextColor
-                }
-            }
-            
-            return nil
-        }
-    }
-    
-    
-    
+ 
     public var navigationBarStyle:NavigationBarStyle?{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.navigationBarStyleNight : theme.navigationBarStyle
+                    return isItNight ? theme.navigationBarStyleNight : theme.navigationBarStyle
                 }
                 else{
                     return unwrapedCurrentTheme.navigationBarStyle
@@ -93,7 +77,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.tabBarStyleNight : theme.tabBarStyle
+                    return isItNight ? theme.tabBarStyleNight : theme.tabBarStyle
                 }
                 else{
                     return unwrapedCurrentTheme.tabBarStyle
@@ -108,7 +92,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.toolbarStyleNight : theme.toolbarStyle
+                    return isItNight ? theme.toolbarStyleNight : theme.toolbarStyle
                 }
                 else{
                     return unwrapedCurrentTheme.toolbarStyle
@@ -123,7 +107,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.searchBarStyleNight : theme.searchBarStyle
+                    return isItNight ? theme.searchBarStyleNight : theme.searchBarStyle
                 }
                 else{
                     return unwrapedCurrentTheme.searchBarStyle
@@ -138,7 +122,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.statusBarStyleNight : theme.statusBarStyle
+                    return isItNight ? theme.statusBarStyleNight : theme.statusBarStyle
                 }
                 else{
                     return unwrapedCurrentTheme.statusBarStyle
@@ -153,7 +137,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.buttonStyleNight : theme.buttonStyle
+                    return isItNight ? theme.buttonStyleNight : theme.buttonStyle
                 }
                 else{
                     return unwrapedCurrentTheme.buttonStyle
@@ -168,7 +152,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.textFieldStyleNight : theme.textFieldStyle
+                    return isItNight ? theme.textFieldStyleNight : theme.textFieldStyle
                 }
                 else{
                     return unwrapedCurrentTheme.textFieldStyle
@@ -184,7 +168,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.textViewStyleNight : theme.textViewStyle
+                    return isItNight ? theme.textViewStyleNight : theme.textViewStyle
                 }
                 else{
                     return unwrapedCurrentTheme.textViewStyle
@@ -199,7 +183,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.keyboardStyleNight : theme.keyboardStyle
+                    return isItNight ? theme.keyboardStyleNight : theme.keyboardStyle
                 }
                 else{
                     return unwrapedCurrentTheme.keyboardStyle
@@ -214,7 +198,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.activityIndicatorViewStyleNight : theme.activityIndicatorViewStyle
+                    return isItNight ? theme.activityIndicatorViewStyleNight : theme.activityIndicatorViewStyle
                 }
                 else{
                     return unwrapedCurrentTheme.activityIndicatorViewStyle
@@ -231,7 +215,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.switchStyleNight : theme.switchStyle
+                    return isItNight ? theme.switchStyleNight : theme.switchStyle
                 }
                 else{
                     return unwrapedCurrentTheme.switchStyle
@@ -247,7 +231,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.sliderStyleNight : theme.sliderStyle
+                    return isItNight ? theme.sliderStyleNight : theme.sliderStyle
                 }
                 else{
                     return unwrapedCurrentTheme.sliderStyle
@@ -262,7 +246,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.progressViewStyleNight : theme.progressViewStyle
+                    return isItNight ? theme.progressViewStyleNight : theme.progressViewStyle
                 }
                 else{
                     return unwrapedCurrentTheme.progressViewStyle
@@ -277,7 +261,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.pageControlStyleNight : theme.pageControlStyle
+                    return isItNight ? theme.pageControlStyleNight : theme.pageControlStyle
                 }
                 else{
                     return unwrapedCurrentTheme.pageControlStyle
@@ -292,7 +276,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.stepperStyleNight : theme.stepperStyle
+                    return isItNight ? theme.stepperStyleNight : theme.stepperStyle
                 }
                 else{
                     return unwrapedCurrentTheme.stepperStyle
@@ -307,7 +291,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.segmentedControlStyleNight : theme.segmentedControlStyle
+                    return isItNight ? theme.segmentedControlStyleNight : theme.segmentedControlStyle
                 }
                 else{
                     return unwrapedCurrentTheme.segmentedControlStyle
@@ -322,7 +306,7 @@ public extension ThemeManager{
         get{
             if let unwrapedCurrentTheme=currentTheme{
                 if let theme = unwrapedCurrentTheme as? DayNightTheme{
-                    return enableNightModel ? theme.scrollViewStyleNight : theme.scrollViewStyle
+                    return isItNight ? theme.scrollViewStyleNight : theme.scrollViewStyle
                 }
                 else{
                     return unwrapedCurrentTheme.scrollViewStyle

@@ -76,14 +76,14 @@ class RedTheme:DayNightTheme {
 
 and then apply your theme like this
 ```swift
-ThemeManager.shared.setTheme(dayNight: RedTheme, nightMode: true)
+ThemeManager.shared.setTheme(dayNight: RedTheme, nightModeStatus: .enable)
 ```
 
 or
 
 ```swift
 ThemeManager.shared.setTheme(dayNight: RedTheme())
-ThemeManager.shared.enableNightModel=true
+ThemeManager.shared.nightModelStatus = .enable
 ```
 
 <img src="https://raw.githubusercontent.com/MostafaTaghipour/mtpThemeManager/master/screenshots/4.png" width="300" title="night theme">
@@ -110,7 +110,6 @@ class RedTheme:Theme {
 - var displayName:String{get}
 - var tintColor:UIColor{get}
 - var primaryTextColor:UIColor{get}
-- var secondaryTextColor:UIColor{get}
 - var backgroundColor:UIColor{get}
 - var navigationBarStyle:NavigationBarStyle{get}
 - var tabBarStyle:TabBarStyle{get}
@@ -134,7 +133,6 @@ class RedTheme:Theme {
 In addition to the above properties, the DayNightTheme include the following properties too
 - var tintColorNight:UIColor{get}
 - var primaryTextColorNight:UIColor{get}
-- var secondaryTextColorNight:UIColor{get}
 - var backgroundColorNight:UIColor{get}
 - var navigationBarStyleNight:NavigationBarStyle{get}
 - var tabBarStyleNight:TabBarStyle{get}
@@ -213,7 +211,6 @@ override func viewDidLoad() {
 - public var tintColor:UIColor?
 - public var backgroundColor:UIColor?
 - public var primaryTextColor:UIColor?
-- public var secondaryTextColor:UIColor?
 - public var navigationBarStyle:NavigationBarStyle?
 - public var tabBarStyle:TabBarStyle
 - public var toolbarStyle:ToolbarStyle?

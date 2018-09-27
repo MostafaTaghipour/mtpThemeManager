@@ -15,17 +15,18 @@ public class ThemeManager {
         return _currentTheme
     }
     
+    public private(set) var isItNight:Bool = false
     
-    private var _enableNightModel:Bool=false
-    public var enableNightModel:Bool{
+    private var _nightModeStatus:NightModeStatus = .disable
+    public var nightModeStatus:NightModeStatus {
         get{
-            return _enableNightModel
+            return _nightModeStatus
         }
         set{
             if let theme = _currentTheme as? DayNightTheme{
-                let needUpdate = _enableNightModel != newValue
+                let needUpdate = _nightModeStatus != newValue
                 if needUpdate{
-                    self.setTheme(dayNight: theme, nightMode: newValue)
+                    self.setTheme(dayNight: theme, nightModeStatus: newValue)
                 }
             }
         }
@@ -66,7 +67,7 @@ public class ThemeManager {
         
         
         customizeTheme(tintColor:theme.tintColor,
-                       textColor: theme.primaryTextColor,
+                       textColor: theme.textColor,
                        statusBarStyle: theme.statusBarStyle,
                        navigationBarStyle:theme.navigationBarStyle,
                        tabBarStyle: theme.tabBarStyle,
@@ -88,42 +89,58 @@ public class ThemeManager {
     
     
     //set theme night mode
-    public func setTheme(dayNight theme:DayNightTheme,nightMode:Bool? = nil){
+    public func setTheme(dayNight theme:DayNightTheme,nightModeStatus:NightModeStatus? = nil){
         
-        let isNightModeEnable:Bool = nightMode ?? enableNightModel
+        let nightStatus = nightModeStatus ?? self.nightModeStatus
         
-        guard _currentTheme != theme || isNightModeEnable != _enableNightModel else {
+        guard _currentTheme != theme || nightStatus != self._nightModeStatus else {
             return
         }
         
         self._currentTheme=theme
-        _enableNightModel=isNightModeEnable
+        _nightModeStatus=nightStatus
+        isItNight = checkisItNight(nightModeStatus: nightStatus)
         
         NotificationCenter.default.post(name: NSNotification.Name.ThemeDidChange, object: theme)
         
-        customizeTheme(tintColor:enableNightModel ? theme.tintColorNight : theme.tintColor,
-                       textColor: enableNightModel ? theme.primaryTextColorNight : theme.primaryTextColor,
-                       statusBarStyle: enableNightModel ? theme.statusBarStyleNight : theme.statusBarStyle,
-                       navigationBarStyle:enableNightModel ? theme.navigationBarStyleNight : theme.navigationBarStyle,
-                       tabBarStyle: enableNightModel ? theme.tabBarStyleNight : theme.tabBarStyle,
-                       toolbarStyle: enableNightModel ? theme.toolbarStyleNight : theme.toolbarStyle,
-                       searchBarStyle: enableNightModel ? theme.searchBarStyleNight : theme.searchBarStyle,
-                       keyboardStyle: enableNightModel ? theme.keyboardStyleNight : theme.keyboardStyle,
-                       textFieldStyle: enableNightModel ? theme.textFieldStyleNight : theme.textFieldStyle,
-                       textViewStyle: enableNightModel ? theme.textViewStyleNight : theme.textViewStyle,
-                       activityIndicatorViewStyle: enableNightModel ? theme.activityIndicatorViewStyleNight : theme.activityIndicatorViewStyle,
-                       progressViewStyle:enableNightModel ? theme.progressViewStyleNight : theme.progressViewStyle,
-                       stepperStyle:enableNightModel ? theme.stepperStyleNight : theme.stepperStyle,
-                       segmentedControlStyle:enableNightModel ? theme.segmentedControlStyleNight : theme.segmentedControlStyle,
-                       scrollViewStyle:enableNightModel ? theme.scrollViewStyleNight : theme.scrollViewStyle,
-                       sliderStyle:enableNightModel ? theme.sliderStyleNight : theme.sliderStyle,
-                       switchStyle:enableNightModel ? theme.switchStyleNight : theme.switchStyle,
-                       pageControlStyle:enableNightModel ? theme.pageControlStyleNight : theme.pageControlStyle,
-                       buttonStyle: enableNightModel ? theme.buttonStyleNight : theme.buttonStyle)
+        customizeTheme(tintColor:isItNight ? theme.tintColorNight : theme.tintColor,
+                       textColor: isItNight ? theme.textColorNight : theme.textColor,
+                       statusBarStyle: isItNight ? theme.statusBarStyleNight : theme.statusBarStyle,
+                       navigationBarStyle:isItNight ? theme.navigationBarStyleNight : theme.navigationBarStyle,
+                       tabBarStyle: isItNight ? theme.tabBarStyleNight : theme.tabBarStyle,
+                       toolbarStyle: isItNight ? theme.toolbarStyleNight : theme.toolbarStyle,
+                       searchBarStyle: isItNight ? theme.searchBarStyleNight : theme.searchBarStyle,
+                       keyboardStyle: isItNight ? theme.keyboardStyleNight : theme.keyboardStyle,
+                       textFieldStyle: isItNight ? theme.textFieldStyleNight : theme.textFieldStyle,
+                       textViewStyle: isItNight ? theme.textViewStyleNight : theme.textViewStyle,
+                       activityIndicatorViewStyle: isItNight ? theme.activityIndicatorViewStyleNight : theme.activityIndicatorViewStyle,
+                       progressViewStyle:isItNight ? theme.progressViewStyleNight : theme.progressViewStyle,
+                       stepperStyle:isItNight ? theme.stepperStyleNight : theme.stepperStyle,
+                       segmentedControlStyle:isItNight ? theme.segmentedControlStyleNight : theme.segmentedControlStyle,
+                       scrollViewStyle:isItNight ? theme.scrollViewStyleNight : theme.scrollViewStyle,
+                       sliderStyle:isItNight ? theme.sliderStyleNight : theme.sliderStyle,
+                       switchStyle:isItNight ? theme.switchStyleNight : theme.switchStyle,
+                       pageControlStyle:isItNight ? theme.pageControlStyleNight : theme.pageControlStyle,
+                       buttonStyle: isItNight ? theme.buttonStyleNight : theme.buttonStyle)
     }
     
     
-    
+    private func checkisItNight(nightModeStatus:NightModeStatus) -> Bool {
+        switch nightModeStatus {
+        case .disable:
+            return false
+        case .enable:
+            return true
+        case .auto:
+            
+            let hour = Calendar.current.component(.hour, from: Date())
+            
+            switch hour {
+                case 6..<19 : return false
+                default: return true
+            }
+        }
+    }
     
     
     private func getClassList() -> [AnyClass] {
