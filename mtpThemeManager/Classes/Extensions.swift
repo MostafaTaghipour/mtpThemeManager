@@ -20,7 +20,6 @@ extension UIViewController{
     
     open override func awakeFromNib() {
         super.awakeFromNib()
-        
         if let bgColor=ThemeManager.shared.backgroundColor{
             
             if view.backgroundColor != bgColor{

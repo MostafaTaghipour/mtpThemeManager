@@ -22,7 +22,6 @@
 		DA32478E1FBA1D2100548813 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3247871FBA1D2000548813 /* Theme.swift */; };
 		DA32478F1FBA1D2100548813 /* Style+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3247881FBA1D2100548813 /* Style+Extensions.swift */; };
 		DA3247901FBA1D2100548813 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3247891FBA1D2100548813 /* Extensions.swift */; };
-		DAC94ACA215D38A500DB7C6E /* NightModeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC94AC9215D38A500DB7C6E /* NightModeStatus.swift */; };
 		E9DA2A451D3DFA17087FC4B04FC05F1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +69,6 @@
 		DA3247871FBA1D2000548813 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = mtpThemeManager/Classes/Theme.swift; sourceTree = "<group>"; };
 		DA3247881FBA1D2100548813 /* Style+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Style+Extensions.swift"; path = "mtpThemeManager/Classes/Style+Extensions.swift"; sourceTree = "<group>"; };
 		DA3247891FBA1D2100548813 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = mtpThemeManager/Classes/Extensions.swift; sourceTree = "<group>"; };
-		DAC94AC9215D38A500DB7C6E /* NightModeStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NightModeStatus.swift; path = mtpThemeManager/Classes/NightModeStatus.swift; sourceTree = "<group>"; };
 		DBAE68EBDADA5E64963E8291951C5DD9 /* mtpThemeManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = mtpThemeManager.modulemap; sourceTree = "<group>"; };
 		E2F95CFFBC5EF7DAD7026385C0825053 /* Pods-mtpThemeManager_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-mtpThemeManager_Example.modulemap"; sourceTree = "<group>"; };
 		E3A4C1DAEAC6D7D2E62F4F1E12C7CE9C /* mtpThemeManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "mtpThemeManager-dummy.m"; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				DA3247891FBA1D2100548813 /* Extensions.swift */,
-				DAC94AC9215D38A500DB7C6E /* NightModeStatus.swift */,
 				DA3247841FBA1D2000548813 /* Style.swift */,
 				DA3247881FBA1D2100548813 /* Style+Extensions.swift */,
 				DA3247871FBA1D2000548813 /* Theme.swift */,
@@ -357,7 +354,6 @@
 				DA32478B1FBA1D2100548813 /* Style.swift in Sources */,
 				DA32478F1FBA1D2100548813 /* Style+Extensions.swift in Sources */,
 				DA32478D1FBA1D2100548813 /* ThemeManager.swift in Sources */,
-				DAC94ACA215D38A500DB7C6E /* NightModeStatus.swift in Sources */,
 				DA32478E1FBA1D2100548813 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

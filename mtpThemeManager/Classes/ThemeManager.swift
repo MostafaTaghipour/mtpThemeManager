@@ -192,6 +192,15 @@ public class ThemeManager {
 }
 
 
+public enum NightModeStatus {
+    case disable
+    case enable
+    case auto
+    
+    public static var all : [NightModeStatus] = [.disable , .enable , .auto]
+}
+
+
 /*
  . new style
  . theme var
