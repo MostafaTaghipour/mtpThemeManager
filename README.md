@@ -76,7 +76,7 @@ class RedTheme:DayNightTheme {
 
 and then apply your theme like this
 ```swift
-ThemeManager.shared.setTheme(dayNight: RedTheme, nightModeStatus: .enable)
+ThemeManager.shared.setTheme(dayNight: RedTheme(), nightModeStatus: .enable)
 ```
 
 or
