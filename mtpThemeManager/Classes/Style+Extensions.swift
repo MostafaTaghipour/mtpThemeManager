@@ -11,7 +11,7 @@ import UIKit
 extension UINavigationBar{
     public func setStyle(style:NavigationBarStyle) {
         tintColor = style.tintColor
-        titleTextAttributes = style.titleColor != nil ? [NSAttributedStringKey.foregroundColor: style.titleColor!] : UINavigationBar.appearance().titleTextAttributes
+        titleTextAttributes = style.titleColor != nil ? [NSAttributedString.Key.foregroundColor: style.titleColor!] : UINavigationBar.appearance().titleTextAttributes
         barStyle = style.barStyle
         isTranslucent = style.isTranslucent || style.isTransparent
         shadowImage = style.isHairlineHidden || style.isTransparent ? UIImage() : ThemeManager.shared.default_bar_shadow
@@ -112,8 +112,8 @@ extension UITextView{
 
 extension UIActivityIndicatorView{
     public func setStyle(style:ActivityIndicatorViewStyle) {
-        activityIndicatorViewStyle = style.style
-        color = style.color
+        self.style = style.style
+        self.color = style.color
         
     }
 }

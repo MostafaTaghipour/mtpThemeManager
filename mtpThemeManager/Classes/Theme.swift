@@ -83,7 +83,7 @@ public extension Theme {
         return TextViewStyle(textColor: textColor)
     }
     var activityIndicatorViewStyle : ActivityIndicatorViewStyle {
-        return ActivityIndicatorViewStyle()
+        return ActivityIndicatorViewStyle.init()
     }
     var scrollViewStyle:ScrollViewStyle{
     return ScrollViewStyle()

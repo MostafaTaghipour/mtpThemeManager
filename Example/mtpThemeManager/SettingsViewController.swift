@@ -77,7 +77,7 @@ extension SettingsViewController:UIPickerViewDelegate,UIPickerViewDataSource{
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let titleData = pickerView === themePicker ? allThemes[row].displayName : "\(NightModeStatus.all[row])"
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedStringKey.foregroundColor:themeManager.primaryTextColor!])
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.foregroundColor:themeManager.primaryTextColor!])
         return myTitle
     }
 }

@@ -129,7 +129,7 @@ public struct SearchBarStyle: Style {
     public var backgroundColor:UIColor? = nil
     public var tintColor:UIColor? = nil
     public var barStyle:UIBarStyle = .default
-    public var searchBarStyle:UISearchBarStyle = .default
+    public var searchBarStyle:UISearchBar.Style = .default
     public var isTranslucent:Bool = true
     public var isTransparent:Bool = false
     public var textFieldStyle:TextFieldStyle? = nil
@@ -137,7 +137,7 @@ public struct SearchBarStyle: Style {
     public init(backgroundColor:UIColor? = nil,
          tintColor:UIColor? = nil,
          barStyle:UIBarStyle = .default,
-         searchStyle:UISearchBarStyle = .default,
+         searchStyle:UISearchBar.Style = .default,
          isTranslucent:Bool = true,
          isTransparent:Bool = false,
          textFieldStyle:TextFieldStyle? = nil) {
@@ -163,8 +163,8 @@ public struct TextFieldStyle: Style {
     public var backgroundColor: UIColor?=nil
     public var textColor:UIColor? = nil
     public var placeholderColor:UIColor? = nil
-    public var borderStyle:UITextBorderStyle = .roundedRect
-    public var clearButtonMode:UITextFieldViewMode = .never
+    public var borderStyle:UITextField.BorderStyle = .roundedRect
+    public var clearButtonMode:UITextField.ViewMode = .never
     
     public init(backgroundColor:UIColor? = nil,
          textColor:UIColor? = nil,
@@ -172,8 +172,8 @@ public struct TextFieldStyle: Style {
          borderWidth:CGFloat = 0,
          cornerRadius:CGFloat = 0,
          placeholderColor:UIColor? = nil,
-         borderStyle:UITextBorderStyle = .roundedRect,
-         clearButton:UITextFieldViewMode = .never) {
+         borderStyle:UITextField.BorderStyle = .roundedRect,
+         clearButton:UITextField.ViewMode = .never) {
         
         self.backgroundColor=backgroundColor
         self.textColor=textColor
@@ -245,10 +245,10 @@ public struct ButtonStyle: Style {
 //MARK:- ActivityIndicatorViewStyle
 public struct ActivityIndicatorViewStyle: Style {
     
-    public var style: UIActivityIndicatorViewStyle = .gray
+    public var style: UIActivityIndicatorView.Style = .gray
     public var color:UIColor? = nil
     
-    public init(style: UIActivityIndicatorViewStyle = .gray,
+    public init(style: UIActivityIndicatorView.Style = .gray,
          color:UIColor? = nil) {
         
         self.style=style
@@ -260,9 +260,9 @@ public struct ActivityIndicatorViewStyle: Style {
 //MARK:- ScrollViewStyle
 public struct ScrollViewStyle: Style {
     
-    public var indicatorStyle: UIScrollViewIndicatorStyle = .default
+    public var indicatorStyle: UIScrollView.IndicatorStyle = .default
     
-    public init(indicatorStyle: UIScrollViewIndicatorStyle = .default) {
+    public init(indicatorStyle: UIScrollView.IndicatorStyle = .default) {
         self.indicatorStyle=indicatorStyle
     }
 }
@@ -318,11 +318,11 @@ public struct ProgressViewStyle: Style {
     
     public var progressTintColor:UIColor? = nil
     public var trackTintColor:UIColor? = nil
-    public var style:UIProgressViewStyle = .default
+    public var style:UIProgressView.Style = .default
     
     public init(progressTintColor:UIColor? = nil,
          trackTintColor:UIColor? = nil,
-         style:UIProgressViewStyle = .default) {
+         style:UIProgressView.Style = .default) {
         
         self.progressTintColor=progressTintColor
         self.trackTintColor=trackTintColor

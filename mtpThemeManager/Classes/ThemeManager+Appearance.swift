@@ -87,10 +87,10 @@ extension ThemeManager{
         
         var titleAttr = apperance.titleTextAttributes ?? [:]
         if let titleColor = style.titleColor{
-            titleAttr.updateValue(titleColor, forKey: NSAttributedStringKey.foregroundColor)
+            titleAttr.updateValue(titleColor, forKey: NSAttributedString.Key.foregroundColor)
         }
         else{
-            titleAttr.removeValue(forKey: NSAttributedStringKey.foregroundColor)
+            titleAttr.removeValue(forKey: NSAttributedString.Key.foregroundColor)
         }
         apperance.titleTextAttributes = titleAttr
         
@@ -98,13 +98,13 @@ extension ThemeManager{
         let buttonBarAppearance=UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationBar.self])
         var barButtonTitleAttr = buttonBarAppearance.titleTextAttributes(for: .normal) ?? [:]
         if let buttonColor=style.tintColor{
-            barButtonTitleAttr.updateValue(buttonColor, forKey: NSAttributedStringKey.foregroundColor.rawValue)
+            barButtonTitleAttr.updateValue(buttonColor, forKey: NSAttributedString.Key.foregroundColor)
         }
         else{
-            barButtonTitleAttr.updateValue(tintColor!, forKey: NSAttributedStringKey.foregroundColor.rawValue)
+            barButtonTitleAttr.updateValue(tintColor!, forKey: NSAttributedString.Key.foregroundColor)
         }
         let convertedAttributes = Dictionary(uniqueKeysWithValues:
-            barButtonTitleAttr.lazy.map { (NSAttributedStringKey($0.key), $0.value) }
+            barButtonTitleAttr.lazy.map { ($0.key, $0.value) }
         )
         buttonBarAppearance.setTitleTextAttributes(convertedAttributes, for: .normal)
         
@@ -265,7 +265,7 @@ extension ThemeManager{
         
         let apperance = UIActivityIndicatorView.appearance()
         
-        apperance.activityIndicatorViewStyle = style.style
+        apperance.style = style.style
         apperance.color = style.color
         
     }
