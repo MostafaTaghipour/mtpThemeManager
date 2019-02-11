@@ -156,7 +156,9 @@ public class ThemeManager {
             }
         }
         
-        allClasses.deallocate(capacity: Int(expectedClassCount))
+        allClasses.deallocate()
+            
+            //.deallocate(capacity: Int(expectedClassCount))
         
         return classes
     }
