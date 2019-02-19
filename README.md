@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/mtpThemeManager.svg?style=flat)](http://cocoapods.org/pods/mtpThemeManager)
 [![Platform](https://img.shields.io/cocoapods/p/mtpThemeManager.svg?style=flat)](http://cocoapods.org/pods/mtpThemeManager)
 
+## [Android version is here](https://github.com/MostafaTaghipour/ThemeManager)
+
 mtpThemeManger is a theme manager for iOS:
 
 - Apply theme to whole app
