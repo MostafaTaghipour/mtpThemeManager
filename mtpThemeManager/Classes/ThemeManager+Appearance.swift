@@ -11,7 +11,6 @@ import UIKit
 
 extension ThemeManager{
     
-    
     func customizeTheme(tintColor:UIColor,
                         textColor:UIColor,
                         statusBarStyle:StatusBarStyle,

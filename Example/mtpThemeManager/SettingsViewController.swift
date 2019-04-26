@@ -26,7 +26,7 @@ class SettingsViewController: UIViewController {
         themePicker.selectorColor = secondaryTextColor
         
         allThemes=themeManager.availableThemes
-        if let currentTheme=themeManager.currentTheme , let selectedValue=allThemes.index(where: {$0.id==currentTheme.id}){
+        if let currentTheme=themeManager.currentTheme , let selectedValue=allThemes.firstIndex(where: {$0.id==currentTheme.id}){
             themePicker.selectRow(selectedValue, inComponent: 0, animated: false)
         }
         
@@ -35,7 +35,7 @@ class SettingsViewController: UIViewController {
         nightPicker.selectorColor = secondaryTextColor
         
      
-        if  let selectedValue=NightModeStatus.all.index(of: themeManager.nightModeStatus ){
+        if  let selectedValue=NightModeStatus.all.firstIndex(of: themeManager.nightModeStatus ){
             nightPicker.selectRow(selectedValue, inComponent: 0, animated: false)
         }
     }
