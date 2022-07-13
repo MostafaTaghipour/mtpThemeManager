@@ -115,9 +115,7 @@ extension ThemeManager {
         UIApplication.shared.statusBarStyle = style.style
         UIApplication.shared.isStatusBarHidden = style.isHidden
 
-        if let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView {
-            statusBar.backgroundColor = style.backgroundColor
-        }
+        UIApplication.shared.statusBarView?.backgroundColor = style.backgroundColor
     }
 
     /// setKeyboardStyle
