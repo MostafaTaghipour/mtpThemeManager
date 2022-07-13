@@ -8,45 +8,32 @@
 
 import UIKit
 
-
-extension Notification.Name
-{
-    public  static let ThemeDidChange = Notification.Name("themeChanged")
+extension Notification.Name {
+    public static let ThemeDidChange = Notification.Name("themeChanged")
 }
 
-
-
-extension UIViewController{
-    
-    open override func awakeFromNib() {
+extension UIViewController {
+    override open func awakeFromNib() {
         super.awakeFromNib()
-        if let bgColor=ThemeManager.shared.backgroundColor{
-            
-            if view.backgroundColor != bgColor{
+        if let bgColor = ThemeManager.shared.backgroundColor {
+            if view.backgroundColor != bgColor {
                 view.backgroundColor = bgColor
-                
             }
-        }
-        else{
+        } else {
             let when = DispatchTime.now() + 0.2
             DispatchQueue.main.asyncAfter(deadline: when) {
-                if let bgColor=ThemeManager.shared.backgroundColor{
-                    
-                    if self.view.backgroundColor != bgColor{
+                if let bgColor = ThemeManager.shared.backgroundColor {
+                    if self.view.backgroundColor != bgColor {
                         self.view.backgroundColor = bgColor
-                        
                     }
                 }
             }
         }
     }
-    
 }
 
-
 extension UIView {
-    @IBInspectable dynamic var cornerRadius: CGFloat
-        {
+    @IBInspectable dynamic var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }
@@ -55,8 +42,8 @@ extension UIView {
             layer.masksToBounds = newValue > 0
         }
     }
-    @IBInspectable dynamic var borderWidth: CGFloat
-        {
+
+    @IBInspectable dynamic var borderWidth: CGFloat {
         get {
             return layer.borderWidth
         }
@@ -64,49 +51,40 @@ extension UIView {
             layer.borderWidth = newValue
         }
     }
-    @IBInspectable dynamic var borderColor: UIColor?
-        {
-        set{ self.layer.borderColor = newValue?.cgColor }
-        get{ return UIColor(cgColor: self.layer.borderColor!) }
+
+    @IBInspectable dynamic var borderColor: UIColor? {
+        set { layer.borderColor = newValue?.cgColor }
+        get { return UIColor(cgColor: layer.borderColor!) }
     }
 }
 
-
-extension UITextField{
+extension UITextField {
     @IBInspectable dynamic var placeHolderColor: UIColor? {
         get {
             return self.placeHolderColor
         }
         set {
-            self.attributedPlaceholder = NSAttributedString(string:self.placeholder != nil ? self.placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: newValue!])
+            attributedPlaceholder = NSAttributedString(string: placeholder != nil ? placeholder! : "", attributes: [NSAttributedString.Key.foregroundColor: newValue!])
         }
     }
 }
 
-
-extension UITextView{
+extension UITextView {
     @IBInspectable dynamic var keyboardAppear: UIKeyboardAppearance {
         get {
-            return self.keyboardAppearance
+            return keyboardAppearance
         }
         set {
-            self.keyboardAppearance=newValue
+            keyboardAppearance = newValue
         }
     }
 }
-
 
 // fixing Bug in XCode
 // http://openradar.appspot.com/18448072
 extension UIImageView {
     override open func awakeFromNib() {
         super.awakeFromNib()
-        self.tintColorDidChange()
+        tintColorDidChange()
     }
 }
-
-
-
-
-
-

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'mtpThemeManager'
-  s.version          = '1.0.7'
+  s.version          = '2.0.1'
   s.summary          = 'An iOS theme manager with all the features.'
 
 # This description is used to generate tags and improve search results.
@@ -32,7 +32,7 @@ contains apply theme to whole app, multiple themes, night mode, styles , ...
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'mtpThemeManager/Classes/**/*'
+  s.source_files = 'Sources/mtpThemeManager/**/*'
   
   # s.resource_bundles = {
   #   'mtpThemeManager' => ['mtpThemeManager/Assets/*.png']

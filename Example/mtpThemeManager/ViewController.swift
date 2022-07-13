@@ -6,27 +6,21 @@
 //  Copyright (c) 2017 mostafa.taghipour@ymail.com. All rights reserved.
 //
 
-import UIKit
 import mtpThemeManager
+import UIKit
 
 class ViewController: UIViewController {
-    
-    @IBOutlet weak var subtitleLabel: UILabel!
-    
+    @IBOutlet var subtitleLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        subtitleLabel.textColor = secondaryTextColor
 
+        subtitleLabel.textColor = secondaryTextColor
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 }
-
-
-

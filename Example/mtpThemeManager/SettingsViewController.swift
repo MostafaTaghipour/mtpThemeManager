@@ -6,42 +6,38 @@
 //  Copyright © 2017 CocoaPods. All rights reserved.
 //
 
-import UIKit
 import mtpThemeManager
+import UIKit
 
 class SettingsViewController: UIViewController {
-    
-    @IBOutlet weak var themePicker: UIPickerView!
-    @IBOutlet weak var nightPicker: UIPickerView!
-    
-    let themeManager=ThemeManager.shared
-    var allThemes:[Theme]!
-    
+    @IBOutlet var themePicker: UIPickerView!
+    @IBOutlet var nightPicker: UIPickerView!
+
+    let themeManager = ThemeManager.shared
+    var allThemes: [Theme]!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        themePicker.dataSource=self
-        themePicker.delegate=self
+        themePicker.dataSource = self
+        themePicker.delegate = self
         themePicker.selectorColor = secondaryTextColor
-        
-        allThemes=themeManager.availableThemes
-        if let currentTheme=themeManager.currentTheme , let selectedValue=allThemes.firstIndex(where: {$0.id==currentTheme.id}){
+
+        allThemes = themeManager.availableThemes
+        if let currentTheme = themeManager.currentTheme, let selectedValue = allThemes.firstIndex(where: { $0.id == currentTheme.id }) {
             themePicker.selectRow(selectedValue, inComponent: 0, animated: false)
         }
-        
-        nightPicker.dataSource=self
-        nightPicker.delegate=self
+
+        nightPicker.dataSource = self
+        nightPicker.delegate = self
         nightPicker.selectorColor = secondaryTextColor
-        
-     
-        if  let selectedValue=NightModeStatus.all.firstIndex(of: themeManager.nightModeStatus ){
+
+        if let selectedValue = NightModeStatus.all.firstIndex(of: themeManager.nightModeStatus) {
             nightPicker.selectRow(selectedValue, inComponent: 0, animated: false)
         }
     }
-    
-    
-    func reloadAllViewControllers(){
+
+    func reloadAllViewControllers() {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let navigationController = mainStoryboard.instantiateViewController(withIdentifier: "mainNavigationController") as! UINavigationController
         let settingVC = mainStoryboard.instantiateViewController(withIdentifier: "settingVC")
@@ -50,37 +46,31 @@ class SettingsViewController: UIViewController {
     }
 }
 
-
-extension SettingsViewController:UIPickerViewDelegate,UIPickerViewDataSource{
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return  1
+extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in _: UIPickerView) -> Int {
+        return 1
     }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent _: Int) -> Int {
         return pickerView === themePicker ? allThemes.count : NightModeStatus.all.count
     }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent _: Int) -> String? {
         return pickerView === themePicker ? allThemes[row].displayName : "\(NightModeStatus.all[row])"
     }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if (pickerView === themePicker){
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent _: Int) {
+        if pickerView === themePicker {
             themeManager.setTheme(dayNight: allThemes[row] as! AppTheme)
-        }
-        else{
+        } else {
             themeManager.nightModeStatus = NightModeStatus.all[row]
         }
         reloadAllViewControllers()
     }
-    
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent _: Int) -> NSAttributedString? {
         let titleData = pickerView === themePicker ? allThemes[row].displayName : "\(NightModeStatus.all[row])"
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.foregroundColor:themeManager.primaryTextColor!])
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.foregroundColor: themeManager.primaryTextColor!])
         return myTitle
     }
 }
-
-
-
